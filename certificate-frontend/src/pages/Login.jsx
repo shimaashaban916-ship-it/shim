@@ -3,9 +3,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css";
 
+import { API_URL } from "../api";
+
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("admin");
+  const [password, setPassword] = useState("123456");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -14,7 +16,7 @@ function Login() {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/login", {
+      const res = await axios.post(`${API_URL}/api/login`, {
         username,
         password,
       });
