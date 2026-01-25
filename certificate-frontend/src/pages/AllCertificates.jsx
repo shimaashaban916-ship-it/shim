@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { API_URL } from "../api";
 
 const AllCertificates = () => {
   const [certificates, setCertificates] = useState([]);
@@ -8,7 +9,7 @@ const AllCertificates = () => {
   useEffect(() => {
     const fetchCertificates = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/certificates");
+        const res = await axios.get(`${API_URL}/api/certificates`);
         setCertificates(res.data);
       } catch (err) {
         console.log(err);

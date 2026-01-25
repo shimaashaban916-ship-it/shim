@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/Dashboard.css";
+import { API_URL } from "../api";
 
 function Dashboard() {
   const [certificates, setCertificates] = useState([]);
@@ -22,7 +23,7 @@ function Dashboard() {
   // دالة تجيب الشهادات
   const fetchCertificates = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/certificates", {
+      const res = await axios.get(`${API_URL}/api/certificates`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCertificates(res.data);
@@ -40,7 +41,7 @@ function Dashboard() {
     if (!window.confirm("هل أنت متأكد من حذف هذه الشهادة؟")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/certificates/${id}`, {
+      await axios.delete(`${API_URL}/api/certificates/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("تم حذف الشهادة بنجاح");
@@ -56,7 +57,7 @@ function Dashboard() {
       // Toggle logic
       const newStatus = !currentStatus;
       await axios.put(
-        `http://localhost:5000/api/certificates/${id}`,
+        `${API_URL}/api/certificates/${id}`,
         { isLocked: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -93,7 +94,7 @@ function Dashboard() {
               <div className="dashboard-card-header">
                 {c.photoUrl ? (
                   <img
-                    src={c.photoUrl.startsWith('http') ? c.photoUrl : `http://localhost:5000/${c.photoUrl}`}
+                    src={c.photoUrl.startsWith('http') ? c.photoUrl : `${API_URL}/${c.photoUrl}`}
                     alt={c.name}
                     className="dashboard-card-photo"
                   />

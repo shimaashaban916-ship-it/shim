@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import "../styles/EditCertificate.css";
 import { baladyData } from "../data/baladyData";
+import { API_URL } from "../api";
 
 function EditCertificate() {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ function EditCertificate() {
   useEffect(() => {
     const fetchCertificate = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/certificates/${id}`);
+        const res = await axios.get(`${API_URL}/api/certificates/${id}`);
         const cert = res.data;
 
         setForm({
@@ -114,7 +115,7 @@ function EditCertificate() {
       }
 
       await axios.put(
-        `http://localhost:5000/api/certificates/${id}`,
+        `${API_URL}/api/certificates/${id}`,
         formData,
         {
           headers: {

@@ -10,6 +10,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import "../styles/CertificatePage.css";
 import QRCodeStyling from "qr-code-styling";
+import { API_URL } from "../api";
 
 // أنواع الشهادات المختلفة مع الألوان والأسماء
 const CERTIFICATE_TYPES = {
@@ -34,7 +35,7 @@ const CertificatePage = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/certificates/${id}`
+          `${API_URL}/api/certificates/${id}`
         );
         setCertificate(res.data);
       } catch (err) {
@@ -79,7 +80,7 @@ const CertificatePage = () => {
   // Initialize or update styled QR code
   useEffect(() => {
     if (!certificate) return;
-    const dataUrl = `http://localhost:5173/view/${certificate._id}`;
+    const dataUrl = `${window.location.origin}/view/${certificate._id}`;
 
     if (!qrInstanceRef.current) {
       qrInstanceRef.current = new QRCodeStyling({

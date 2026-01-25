@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
 import "../styles/CertificateView.css";
+import { API_URL } from "../api";
 
 const CertificateView = () => {
   const { id } = useParams();
@@ -11,7 +12,7 @@ const CertificateView = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/certificates/${id}`);
+        const res = await axios.get(`${API_URL}/api/certificates/${id}`);
         setCertificate(res.data);
       } catch (err) {
         console.log(err);

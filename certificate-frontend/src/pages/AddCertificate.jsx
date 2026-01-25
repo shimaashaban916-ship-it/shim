@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/AddCertificate.css";
 import { baladyData } from "../data/baladyData";
+import { API_URL } from "../api";
 
 function AddCertificate() {
   const navigate = useNavigate();
@@ -89,7 +90,7 @@ function AddCertificate() {
     if (!form.licenseNumber) return;
 
     try {
-      const res = await axios.get(`http://localhost:5000/api/certificates/license/${form.licenseNumber}`, {
+      const res = await axios.get(`${API_URL}/api/certificates/license/${form.licenseNumber}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -148,7 +149,7 @@ function AddCertificate() {
       }
 
       const res = await axios.post(
-        "http://localhost:5000/api/certificates",
+        `${API_URL}/api/certificates`,
         formData,
         {
           headers: {
