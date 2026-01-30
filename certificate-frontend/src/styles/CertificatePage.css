@@ -447,29 +447,35 @@
 .instruction-item {
   display: flex;
   align-items: flex-start;
-  /* Align icon with top of text */
   width: 100%;
+  gap: 12px;
+  /* Consistent gap between icon and text */
+  flex-direction: row-reverse;
+  /* Icons on the Left, Text on the Right */
 }
 
 .star-icon {
+  min-width: 25px;
+  /* Prevent squashing */
   width: 25px;
   height: 25px;
   object-fit: contain;
-  margin-top: 5px;
-  /* Slight alignment adjustment */
+  margin-top: 6px;
+  /* Align with first line of text */
   filter: brightness(0) invert(1);
-  /* Make it white if it's not already */
 }
 
 .instruction-item p {
   margin: 0;
   font-size: 20px;
-  /* Larger, readable text */
   font-weight: 500;
   line-height: 1.6;
   font-family: "Cairo", sans-serif;
   color: white;
-  text-align: right;
+  text-align: left;
+  /* Text aligns to the left (next to the star) */
+  flex: 1;
+  /* Allow text to take remaining space */
 }
 
 

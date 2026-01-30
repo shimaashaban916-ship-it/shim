@@ -60,11 +60,11 @@ const CertificatePage = () => {
       await document.fonts.ready;
 
       // PAGE 1: Certificate Header/Body
-      const topDataUrl = await toPng(certTopRef.current, { cacheBust: true, pixelRatio: 3 });
+      const topDataUrl = await toPng(certTopRef.current, { cacheBust: true, pixelRatio: 1.5 });
       pdf.addImage(topDataUrl, "PNG", 0, 0, pdfWidth, pdfHeight);
 
       // PAGE 2: Instructions (Footer)
-      const footerDataUrl = await toPng(certFooterRef.current, { cacheBust: true, pixelRatio: 3 });
+      const footerDataUrl = await toPng(certFooterRef.current, { cacheBust: true, pixelRatio: 1.5 });
       pdf.addPage();
       pdf.addImage(footerDataUrl, "PNG", 0, 0, pdfWidth, pdfHeight);
 
