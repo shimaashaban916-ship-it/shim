@@ -281,38 +281,38 @@ const CertificatePage = () => {
               ref={certFooterRef}
               style={{ backgroundColor: CERTIFICATE_TYPES[certificateType].color }}
             >
-              <div className="footer-header">
-                <div className="footer-logos">
-                  <img src="/logo3.png" alt="logo" className="footer-logo" />
-                  <div className="footer-text-logo">
+              <div className="cert-footer-header">
+                <div className="cert-footer-logos">
+                  <img src="/logo3.png" alt="logo" className="cert-footer-logo" />
+                  <div className="cert-footer-text-logo">
                     <span>وزارة البلديات والإسكان</span>
                     <br />
                     <span style={{ fontSize: '10px', fontWeight: '400', letterSpacing: '0.5px' }}>Ministry of Municipalities and Housing</span>
                   </div>
-                  <div className="footer-palm">
+                  <div className="cert-footer-palm">
                     <img src="/logo2.png" alt="palm" className="palm-icon" />
                   </div>
                 </div>
-                <h2 className="footer-title">تعليمات وإرشادات</h2>
+                <h2 className="cert-footer-title">تعليمات وإرشادات</h2>
               </div>
 
 
 
-              <div className="footer-content">
-                <div className="instruction-item">
-                  <img src={starIcon} className="star-icon" alt="star" />
+              <div className="cert-footer-content">
+                <div className="cert-instruction-item">
+                  <img src={starIcon} className="cert-star-icon" alt="star" />
                   <p>شهادة صحية تجدد سنوياً.</p>
                 </div>
-                <div className="instruction-item">
-                  <img src={starIcon} className="star-icon" alt="star" />
+                <div className="cert-instruction-item">
+                  <img src={starIcon} className="cert-star-icon" alt="star" />
                   <p>يسمح لحامل الشهادة الصحية بالعمل في منشآت الغذاء أو الصحة العامة وفق المهنة المسموح بها نظاماً.</p>
                 </div>
-                <div className="instruction-item">
-                  <img src={starIcon} className="star-icon" alt="star" />
+                <div className="cert-instruction-item">
+                  <img src={starIcon} className="cert-star-icon" alt="star" />
                   <p>يلزم حامل هذه الشهادة بإجراء فحص طبي عند عودته من الخارج قبل البدء بممارسة العمل.</p>
                 </div>
-                <div className="instruction-item">
-                  <img src={starIcon} className="star-icon" alt="star" />
+                <div className="cert-instruction-item">
+                  <img src={starIcon} className="cert-star-icon" alt="star" />
                   <p>لا تعتبر الشهادة إثبات هوية.</p>
                 </div>
               </div>
