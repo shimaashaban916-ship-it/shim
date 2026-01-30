@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toPng } from 'html-to-image';
 import jsPDF from "jspdf";
@@ -23,6 +23,7 @@ const CERTIFICATE_TYPES = {
 
 const CertificatePage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [certificate, setCertificate] = useState(null);
   const [certificateType, setCertificateType] = useState('unified'); // النوع الافتراضي
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
@@ -70,6 +71,12 @@ const CertificatePage = () => {
 
       // Use certificate holder name for filename
       pdf.save(`certificate-${certificate.name || certificate.id}.pdf`);
+
+      // Redirect after short delay
+      setTimeout(() => {
+        navigate('/certificates');
+      }, 2000);
+
     } catch (error) {
       console.error("PDF Generation Error:", error);
       alert("حدث خطأ أثناء تحميل الملف. الرجاء المحاولة مرة أخرى.");
@@ -322,13 +329,18 @@ const CertificatePage = () => {
 
           {/* BUTTONS */}
           <div className="cert-actions">
-            <button onClick={handlePrint}>🖨 طباعة</button>
             <button
               onClick={handleDownloadPdf}
               disabled={isGeneratingPdf}
               style={{ backgroundColor: '#2c3e50', color: 'white' }}
             >
               {isGeneratingPdf ? 'جاري التحميل...' : '📥 تحميل PDF'}
+            </button>
+            <button
+              onClick={() => navigate('/certificates')}
+              style={{ backgroundColor: '#6c757d', color: 'white' }}
+            >
+              🔙 العودة للشهادات
             </button>
           </div>
         </div>
