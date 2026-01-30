@@ -247,8 +247,7 @@ const Header = () => {
 
                 <div className="header-right-group">
                     <div className="brand-logo-container">
-                        <img src="/logo.svg" alt="Balady Logo" className="header-logo" />
-                        <span className="brand-name">خدمات بلدي</span>
+                        <img src="/logo.svg" alt="App Logo" className="header-logo" />
                     </div>
 
                     <nav className="main-nav">
