@@ -283,14 +283,15 @@ const CertificatePage = () => {
             >
               <div className="cert-footer-header">
                 <div className="cert-footer-logos">
-                  <img src="/logo3.png" alt="logo" className="cert-footer-logo" />
-                  <div className="cert-footer-text-logo">
-                    <span>وزارة البلديات والإسكان</span>
-                    <br />
-                    <span style={{ fontSize: '10px', fontWeight: '400', letterSpacing: '0.5px' }}>Ministry of Municipalities and Housing</span>
-                  </div>
-                  <div className="cert-footer-palm">
-                    <img src="/logo2.png" alt="palm" className="palm-icon" />
+                  {/* Vision/Ministry Logo (Skyline) */}
+                  <img src="/vision_logo_new.png" alt="Vision Logo" className="cert-footer-logo" />
+
+                  {/* Ministry Logo Group (Text + Palm) */}
+                  <div className="cert-footer-ministry-group" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <img src="/ministry_text.png" alt="Ministry Text" className="cert-footer-text-logo" style={{ height: '45px', objectFit: 'contain' }} />
+                    <div className="cert-footer-palm">
+                      <img src="/footer_palm_icon.png" alt="palm" className="palm-icon" />
+                    </div>
                   </div>
                 </div>
                 <h2 className="cert-footer-title">تعليمات وإرشادات</h2>
