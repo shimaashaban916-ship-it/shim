@@ -269,3 +269,129 @@
     border-radius: 0;
   }
 }
+
+/* =========================================
+   New Main Footer Styles
+   ========================================= */
+.main-footer {
+  background-color: #004d40; /* Dark Teal Green */
+  color: #ffffff;
+  padding: 20px 0;
+  width: 100%;
+  margin-top: auto;
+  border-top: 4px solid #00ebc7; /* Bright Green underline */
+  position: relative;
+  z-index: 10;
+  direction: rtl; 
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; 
+}
+
+/* Right (actually Left in LTR, but Right in RTL) -> Links */
+/* Center -> Copyright */
+/* Left (actually Right in LTR) -> Logo */
+
+/* Let's be explicit with flex order or just structure */
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.separator {
+  color: #4db6ac;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 14px;
+  color: #e0f2f1;
+}
+
+.footer-copyright p {
+  margin: 0;
+}
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+}
+
+.vision-logo {
+  height: 45px;
+  width: auto;
+  /* Make sure it's white if needed */
+  filter: brightness(0) invert(1);
+}
+
+/* Accessibility Icon Styles */
+.accessibility-icon-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px; /* Bottom Right */
+  z-index: 9999;
+}
+
+.accessibility-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #0076c8; /* Specific Blue */
+  border: 4px solid #ffffff; /* White border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s;
+  padding: 0;
+  outline: none;
+}
+
+.accessibility-btn:hover {
+  transform: scale(1.1);
+  background-color: #005a9e;
+}
+
+.accessibility-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .footer-links, .footer-copyright, .footer-logos {
+    justify-content: center;
+  }
+  
+  .accessibility-icon-container {
+    bottom: 15px;
+    right: 15px;
+  }
+}

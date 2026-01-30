@@ -170,13 +170,41 @@ const CertificateView = () => {
               </div>
             </div>
 
-            <div className="certificate-view-footer">
-              <p className="certificate-view-cert-id">© 2025 وزارة البلديات والإسكان</p>
-              <p className="certificate-view-timestamp">{certificate.uuid || ''}</p>
-            </div>
+            {/* Removed old footer from inside card */}
           </div>
         </div>
       </div>
+
+      {/* Accessibility Icon */}
+      <div className="accessibility-icon-container">
+        <button className="accessibility-btn" aria-label="Accessibility Options">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="1.5" fill="none" />
+            <circle cx="12" cy="7" r="2" fill="white" stroke="none" />
+            <path d="M9 13v6a1 1 0 0 0 2 0v-4h2v4a1 1 0 0 0 2 0v-6" stroke="white" fill="none" />
+            <path d="M8 10h8" stroke="white" strokeWidth="2" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Main Footer */}
+      <footer className="main-footer">
+        <div className="footer-content">
+          <div className="footer-links">
+            <a href="#">خريطة الموقع</a>
+            <span className="separator">|</span>
+            <a href="#">شروط الاستخدام</a>
+            <span className="separator">|</span>
+            <a href="#">اتصل بنا</a>
+          </div>
+          <div className="footer-copyright">
+            <p>© 2025 وزارة البلديات والإسكان</p>
+          </div>
+          <div className="footer-logos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Saudi_Vision_2030_logo.svg/800px-Saudi_Vision_2030_logo.svg.png" alt="Vision 2030" className="vision-logo" />
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
