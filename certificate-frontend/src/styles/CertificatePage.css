@@ -365,13 +365,8 @@
   z-index: 0;
 }
 
-.footer-header,
-.footer-content {
-  position: relative;
-  z-index: 1;
-}
-
-.footer-header {
+/* ====== CERT FOOTER SECTION (RENAMED TO MATCH JSX) ====== */
+.cert-footer-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -380,18 +375,19 @@
   padding-bottom: 15px;
 }
 
-.footer-logos {
+.cert-footer-logos {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.footer-logo {
+.cert-footer-logo {
   height: 50px;
-  filter: brightness(0) invert(1);
+  /* filter: brightness(0) invert(1); */
+  /* Removed filter to keep original colors if needed, or re-add if white is desired */
 }
 
-.footer-palm {
+.cert-footer-palm {
   background: white;
   border-radius: 50%;
   width: 60px;
@@ -401,47 +397,62 @@
   justify-content: center;
 }
 
-.palm-icon {
-  width: 45px;
+.cert-footer-text-logo {
   height: 45px;
+  object-fit: contain;
 }
 
-.footer-text-logo {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.footer-title {
+.cert-footer-title {
   font-size: 32px;
   font-family: "Cairo", sans-serif;
   font-weight: 700;
   margin: 0;
+  color: white;
+  /* Ensure title is white */
 }
 
-.footer-content {
+.cert-footer-content {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  flex-direction: row-reverse;
+  /* RTL layout: items start from right */
+  flex-wrap: wrap;
+  gap: 20px;
+  /* Spacing between items */
   padding: 0 10px;
+  justify-content: flex-start;
+  /* Align items to the right in RTL */
 }
 
-.instruction-item {
+.cert-instruction-item {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row-reverse;
+  /* Icon on the right (start) of text in RTL context, or row if LTR context but aiming for visual right. Let's explicitly control order */
 }
 
-.star-icon {
-  font-size: 20px;
+/* Explicitly controlling order for visual consistency */
+.cert-instruction-item {
+  flex-direction: row;
+  /* Default row */
 }
 
-.instruction-item p {
+/* If direction is RTL, row means: [star] [text] (star on right). Wait, standard flex row in RTL is [RightItem] [LeftItem]. 
+   Let's ensure the star is visually on the right. In RTL, first element in DOM is on right. */
+
+.cert-star-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.cert-instruction-item p {
   margin: 0;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.6;
   font-family: "Cairo", sans-serif;
+  color: white;
 }
 
 
