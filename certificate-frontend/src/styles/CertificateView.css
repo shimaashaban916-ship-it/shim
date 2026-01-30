@@ -408,25 +408,37 @@
 
 @media (max-width: 768px) {
   .footer-content {
-    flex-direction: column;
-    /* Stack vertically on mobile */
-    gap: 20px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logos links"
+      "copyright links";
+    gap: 4px 15px;
+    align-items: center;
     padding-bottom: 80px;
-    /* Space for accessibility icon */
+    text-align: right;
   }
 
   .footer-logos {
-    margin-right: 0;
-    /* Reset desktop margin */
-    justify-content: center;
-    margin-bottom: 10px;
+    grid-area: logos;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .footer-copyright {
+    grid-area: copyright;
+    text-align: right;
+    font-size: 11px;
+    margin-top: -2px;
   }
 
   .footer-links {
-    justify-content: center;
+    grid-area: links;
+    justify-content: flex-end;
+    /* Align to the Left */
     flex-wrap: wrap;
-    gap: 12px;
+    align-content: center;
+    gap: 8px;
   }
 
   /* Reset order for mobile if needed, or keep stacking */
