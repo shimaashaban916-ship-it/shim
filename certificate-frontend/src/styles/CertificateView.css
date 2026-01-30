@@ -400,8 +400,23 @@
   .footer-content {
     flex-direction: column;
     /* Stack vertically on mobile */
-    gap: 15px;
+    gap: 20px;
     text-align: center;
+    padding-bottom: 80px;
+    /* Space for accessibility icon */
+  }
+
+  .footer-logos {
+    margin-right: 0;
+    /* Reset desktop margin */
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
   /* Reset order for mobile if needed, or keep stacking */
