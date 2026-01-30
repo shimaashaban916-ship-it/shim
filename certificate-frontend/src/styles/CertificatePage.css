@@ -723,6 +723,19 @@
      margin-left: 10px !important;
    }
 
+   /* Fix Logo Transparency */
+   .cert-footer-logo,
+   .cert-footer-text-logo,
+   .palm-icon {
+     mix-blend-mode: screen !important;
+     filter: none !important;
+   }
+
+   .cert-footer-palm {
+     background: transparent !important;
+     box-shadow: none !important;
+   }
+
    /* ===== PAGE 2 - Footer only ===== */
    .cert-footer {
      width: 297mm !important;
