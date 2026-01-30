@@ -295,7 +295,7 @@ const CertificatePage = () => {
 
                   {/* Ministry Logo Group (Text + Palm) */}
                   <div className="cert-footer-ministry-group" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <img src="/ministry_text.png" alt="Ministry Text" className="cert-footer-text-logo" style={{ height: '45px', objectFit: 'contain' }} />
+                    <img src="/ministry_text.png" alt="Ministry Text" className="cert-footer-text-logo" />
                     <div className="cert-footer-palm">
                       <img src="/footer_palm_icon.png" alt="palm" className="palm-icon" />
                     </div>

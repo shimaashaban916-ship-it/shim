@@ -414,8 +414,16 @@
 }
 
 .cert-footer-text-logo {
-  height: 45px;
+  width: 188px;
+  /* User requested 188px */
+  height: 35px;
+  /* User requested 35px */
+  margin-top: 18px;
+  /* User requested 18px */
+  margin-right: 6px;
+  /* User requested 6px */
   object-fit: contain;
+  mix-blend-mode: screen;
 }
 
 .cert-footer-title {
