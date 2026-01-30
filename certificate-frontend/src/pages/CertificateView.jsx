@@ -83,7 +83,7 @@ const CertificateView = () => {
               fontSize: '28px',
               fontWeight: '700'
             }}>
-              الشهادة الصحية الموحدة
+              شهادة صحية
             </h2>
           </div>
 
