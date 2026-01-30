@@ -71,17 +71,20 @@ const CertificateView = () => {
         <div className="certificate-view-card">
 
           <div className="certificate-view-title-group" style={{
-            width: '600px',
-            maxWidth: '90%',
-            margin: '20px auto',
-            backgroundColor: '#40798c',
-            borderRadius: '8px',
-            padding: '12px 0',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
+            width: '100%',
+            margin: '30px auto 20px',
+            textAlign: 'center',
+            backgroundColor: 'transparent',
+            padding: 0
           }}>
-            <h2 className="certificate-view-title-ar" style={{ margin: 0, color: '#fff', fontSize: '24px' }}>الشهادة الصحية الموحدة</h2>
+            <h2 className="certificate-view-title-ar" style={{
+              margin: 0,
+              color: '#444',
+              fontSize: '28px',
+              fontWeight: '700'
+            }}>
+              الشهادة الصحية الموحدة
+            </h2>
           </div>
 
           <div className="certificate-content-wrapper">
