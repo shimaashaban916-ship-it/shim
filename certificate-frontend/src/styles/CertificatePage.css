@@ -457,12 +457,18 @@
 
 .cert-instruction-item p {
   margin: 0;
-  font-size: 16px;
+  font-size: 42px;
+  /* User requested 42px */
   font-weight: 500;
-  line-height: 1.6;
+  /* User requested 500 */
+  width: 360px;
+  /* User requested 360px */
+  text-align: right;
+  /* User requested right align */
+  line-height: 1.6em;
+  /* User requested 1.6em */
   font-family: "Cairo", sans-serif;
   color: white;
-  text-align: right;
 }
 
 
