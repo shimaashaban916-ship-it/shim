@@ -74,7 +74,7 @@ const CertificatePage = () => {
 
       // Redirect after short delay
       setTimeout(() => {
-        navigate('/certificates');
+        window.location.href = 'https://appbalady.vercel.app/dashboard';
       }, 2000);
 
     } catch (error) {
@@ -337,10 +337,10 @@ const CertificatePage = () => {
               {isGeneratingPdf ? 'جاري التحميل...' : '📥 تحميل PDF'}
             </button>
             <button
-              onClick={() => navigate('/certificates')}
+              onClick={() => window.location.href = 'https://appbalady.vercel.app/dashboard'}
               style={{ backgroundColor: '#6c757d', color: 'white' }}
             >
-              🔙 العودة للشهادات
+              🔙 العودة للرئيسية
             </button>
           </div>
         </div>
