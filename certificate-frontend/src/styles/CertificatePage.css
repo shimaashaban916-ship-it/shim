@@ -373,6 +373,15 @@
   margin-bottom: 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 15px;
+  direction: rtl;
+}
+
+/* Common style for all footer images to remove black background */
+.cert-footer-logo,
+.cert-footer-text-logo,
+.palm-icon,
+.cert-star-icon {
+  mix-blend-mode: screen;
 }
 
 .cert-footer-logos {
@@ -383,12 +392,11 @@
 
 .cert-footer-logo {
   height: 50px;
-  /* filter: brightness(0) invert(1); */
-  /* Removed filter to keep original colors if needed, or re-add if white is desired */
+  object-fit: contain;
 }
 
 .cert-footer-palm {
-  background: white;
+  background: transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -397,11 +405,14 @@
   justify-content: center;
 }
 
+.palm-icon {
+  width: 45px;
+  height: 45px;
+}
+
 .cert-footer-text-logo {
   height: 45px;
   object-fit: contain;
-  mix-blend-mode: screen;
-  /* Removes black background */
 }
 
 .cert-footer-title {
@@ -415,37 +426,32 @@
 
 .cert-footer-content {
   display: flex;
-  flex-direction: row-reverse;
-  /* RTL layout: items start from right */
-  flex-wrap: wrap;
-  gap: 20px;
-  /* Spacing between items */
+  flex-direction: column;
+  /* Stack items vertically */
+  gap: 15px;
   padding: 0 10px;
-  justify-content: flex-start;
-  /* Align items to the right in RTL */
+  direction: rtl;
+  /* Align content to the right */
 }
 
 .cert-instruction-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-direction: row-reverse;
-  /* Icon on the right (start) of text in RTL context, or row if LTR context but aiming for visual right. Let's explicitly control order */
-}
-
-/* Explicitly controlling order for visual consistency */
-.cert-instruction-item {
+  /* Vertically center icon and text */
+  gap: 10px;
+  justify-content: flex-start;
+  /* Start from right (due to RTL) */
+  text-align: right;
+  width: 100%;
   flex-direction: row;
-  /* Default row */
+  /* Icon then Text in RTL */
 }
-
-/* If direction is RTL, row means: [star] [text] (star on right). Wait, standard flex row in RTL is [RightItem] [LeftItem]. 
-   Let's ensure the star is visually on the right. In RTL, first element in DOM is on right. */
 
 .cert-star-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .cert-instruction-item p {
