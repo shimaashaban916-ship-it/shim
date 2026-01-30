@@ -359,4 +359,10 @@
         background-color: #046f6d;
         /* Green/Teal on Scroll */
     }
+
+    .balady-header.scrolled .header-logo {
+        /* Filter to turn white logo to Teal (#046f6d) */
+        /* Calculated filter for #046f6d from white */
+        filter: brightness(0) saturate(100%) invert(32%) sepia(51%) saturate(1478%) hue-rotate(136deg) brightness(96%) contrast(101%);
+    }
 }
