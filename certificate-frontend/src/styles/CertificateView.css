@@ -217,9 +217,11 @@
   .certificate-view-container {
     min-height: 100vh;
     padding: 0;
+    padding-top: 100px;
+    /* Use padding to allow background to show behind header */
     background: #ffffff;
     align-items: stretch;
-    margin-top: 100px;
+    margin-top: 0;
   }
 
   .certificate-view-card {
