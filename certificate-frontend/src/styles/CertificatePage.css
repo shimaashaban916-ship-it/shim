@@ -337,18 +337,22 @@
 
 
 /* ====== FOOTER SECTION ====== */
+/* ====== FOOTER SECTION ====== */
 .cert-footer {
   border: #1a1a1a3d 1px solid;
   box-shadow: #0d0d0d33 0px 4px 8px;
-  padding: 20px;
+  padding: 30px 40px;
   margin-top: 2px;
   direction: rtl;
+  /* Ensure RTL for Right-to-Left layout */
   min-height: 350px;
   width: 100%;
   color: white;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .cert-footer::before {
@@ -372,79 +376,100 @@
 .footer-content {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .footer-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 15px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
 }
 
+/* In RTL: First item (Logos) is Right, Last item (Title) is Left */
 .footer-logos {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .footer-logo {
-  height: 50px;
+  height: 55px;
   filter: brightness(0) invert(1);
+  object-fit: contain;
 }
 
 .footer-palm {
   background: white;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .palm-icon {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
 .footer-text-logo {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.3;
+  text-align: right;
+  color: white;
+  font-family: "Cairo", sans-serif;
 }
 
 .footer-title {
-  font-size: 32px;
+  font-size: 36px;
   font-family: "Cairo", sans-serif;
   font-weight: 700;
   margin: 0;
+  color: white;
 }
 
+/* Force vertical stacking of instructions */
 .footer-content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 0 10px;
+  gap: 20px;
+  /* Space between items */
+  padding-right: 10px;
 }
 
 .instruction-item {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  /* Align icon with top of text */
+  width: 100%;
 }
 
 .star-icon {
-  font-size: 20px;
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  margin-top: 5px;
+  /* Slight alignment adjustment */
+  filter: brightness(0) invert(1);
+  /* Make it white if it's not already */
 }
 
 .instruction-item p {
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
+  /* Larger, readable text */
   font-weight: 500;
   line-height: 1.6;
   font-family: "Cairo", sans-serif;
+  color: white;
+  text-align: right;
 }
 
 
