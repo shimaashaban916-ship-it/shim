@@ -408,42 +408,50 @@
 
 @media (max-width: 768px) {
   .footer-content {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas:
-      "logos links"
-      "copyright links";
-    gap: 2px 20px;
-    /* Tight vertical gap */
+    display: flex;
+    flex-direction: column;
+    /* Stack vertically */
+    justify-content: center;
     align-items: center;
     padding-bottom: 25px;
     /* Compact height */
-    text-align: right;
+    text-align: center;
+    /* Center text */
+    width: 100%;
+    gap: 10px;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    /* Stack logo and copyright */
+    align-items: center;
+    gap: 5px;
+    width: 100%;
   }
 
   .footer-logos {
-    grid-area: logos;
-    justify-content: flex-start;
     margin: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .footer-copyright {
-    grid-area: copyright;
-    text-align: right;
+    text-align: center;
     font-size: 11px;
-    margin-top: -5px;
-    /* Pull closer to logo */
+    margin: 0;
     white-space: nowrap;
+    line-height: 1.5;
   }
 
   .footer-links {
-    grid-area: links;
-    justify-content: flex-end;
-    /* Align to the Left */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
     flex-wrap: wrap;
-    align-content: center;
-    gap: 10px;
-    margin-bottom: 5px;
+    margin-top: 5px;
   }
 
   /* Reset order for mobile if needed, or keep stacking */
