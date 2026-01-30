@@ -6,18 +6,22 @@ import EditCertificate from "./pages/EditCertificate";
 import CertificatePage from "./pages/CertificatePage";
 import CertificateView from "./pages/CertificateView";
 import AllCertificates from "./pages/AllCertificates";
+import IslamicReminder from "./components/IslamicReminder"; // Import Reminder
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/add-certificate" element={<AddCertificate />} />
-      <Route path="/edit-certificate/:id" element={<EditCertificate />} />
-      <Route path="/certificate/:id" element={<CertificatePage />} />
-      <Route path="/view/:id" element={<CertificateView />} />
-      <Route path="/certificates" element={<AllCertificates />} />
-    </Routes>
+    <>
+      <IslamicReminder /> {/* Add Reminder Global Component */}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/add-certificate" element={<AddCertificate />} />
+        <Route path="/edit-certificate/:id" element={<EditCertificate />} />
+        <Route path="/certificate/:id" element={<CertificatePage />} />
+        <Route path="/view/:id" element={<CertificateView />} />
+        <Route path="/certificates" element={<AllCertificates />} />
+      </Routes>
+    </>
   );
 }
 
