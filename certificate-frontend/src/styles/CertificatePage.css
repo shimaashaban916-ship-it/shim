@@ -370,9 +370,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 15px;
+  margin-bottom: 10px;
+  /* Reduced gap to 10px */
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); Removed separator */
+  /* padding-bottom: 15px; Removed padding */
   direction: rtl;
 }
 
@@ -422,6 +423,8 @@
   font-weight: 700;
   margin: 0;
   color: white;
+  white-space: nowrap;
+  /* Force single line */
   /* Ensure title is white */
 }
 
@@ -457,16 +460,16 @@
 
 .cert-instruction-item p {
   margin: 0;
-  font-size: 42px;
-  /* User requested 42px */
-  font-weight: 500;
-  /* User requested 500 */
-  width: 360px;
-  /* User requested 360px */
+  font-size: 23px;
+  /* User requested 23px */
+  font-weight: 400;
+  /* User requested 400 */
+  /* width: 360px;       Removed fixed width to allow natural flow or re-add if needed */
   text-align: right;
-  /* User requested right align */
   line-height: 1.6em;
   /* User requested 1.6em */
+  direction: rtl;
+  /* User requested direction: rtl */
   font-family: "Cairo", sans-serif;
   color: white;
 }
