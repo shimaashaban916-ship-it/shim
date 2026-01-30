@@ -165,6 +165,11 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.balady-header.scrolled .header-logo {
+    /* Filter to turn white logo to #043534 */
+    filter: brightness(0) saturate(100%) invert(13%) sepia(37%) saturate(913%) hue-rotate(129deg) brightness(95%) contrast(96%);
+}
+
 .balady-header.scrolled .header-content {
     color: #046f6d;
     /* Dark Teal Text */
@@ -361,8 +366,9 @@
         /* Dark Teal #043534 on Scroll */
     }
 
-    .balady-header.scrolled .header-logo {
-        /* Filter to turn white logo to #043534 */
-        filter: brightness(0) saturate(100%) invert(13%) sepia(37%) saturate(913%) hue-rotate(129deg) brightness(95%) contrast(96%);
+    /* Scrolled State for Mobile */
+    .balady-header.scrolled .hamburger-line {
+        background-color: #043534;
+        /* Dark Teal #043534 on Scroll */
     }
 }
