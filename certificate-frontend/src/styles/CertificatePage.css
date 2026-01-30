@@ -401,16 +401,22 @@
 .cert-footer-palm {
   background: transparent;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  /* Increased slightly */
+  height: 65px;
+  /* Increased slightly */
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: -10px;
+  /* Shift right towards text */
 }
 
 .palm-icon {
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  /* Increased from 45px */
+  height: 55px;
+  /* Increased from 45px */
 }
 
 .cert-footer-text-logo {
