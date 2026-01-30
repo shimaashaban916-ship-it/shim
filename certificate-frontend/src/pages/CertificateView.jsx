@@ -175,33 +175,41 @@ const CertificateView = () => {
         </div>
       </div>
 
-      {/* Accessibility Icon */}
+      {/* Accessibility Icon - Fixed Position */}
       <div className="accessibility-icon-container">
         <button className="accessibility-btn" aria-label="Accessibility Options">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="1.5" fill="none" />
-            <circle cx="12" cy="7" r="2" fill="white" stroke="none" />
-            <path d="M9 13v6a1 1 0 0 0 2 0v-4h2v4a1 1 0 0 0 2 0v-6" stroke="white" fill="none" />
-            <path d="M8 10h8" stroke="white" strokeWidth="2" />
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#0076c8" />
+            <path d="M12 4.5C13.1 4.5 14 3.6 14 2.5C14 1.4 13.1 0.5 12 0.5C10.9 0.5 10 1.4 10 2.5C10 3.6 10.9 4.5 12 4.5ZM12 6.5C9.5 6.5 7 7 7 7V12.5H9.5V19.5H14.5V12.5H17V7C17 7 14.5 6.5 12 6.5Z" fill="white" transform="translate(0 2) scale(0.85 0.85)" />
+            {/* Alternative Path for "Universal Access" style if above isn't exact */}
+            <path d="M12 5.5C12.8284 5.5 13.5 4.82843 13.5 4C13.5 3.17157 12.8284 2.5 12 2.5C11.1716 2.5 10.5 3.17157 10.5 4C10.5 4.82843 11.1716 5.5 12 5.5Z" fill="white" />
+            <path d="M10 8V18H10.6667V22H13.3333V18H14V8H18V6H6V8H10Z" fill="white" />
+          </svg>
+          {/* Let's use a simpler, cleaner SVG for the "Man in Circle" */}
+          <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', top: 0, left: 0, padding: '10px' }}>
+            <path d="M50,18c4.4,0,8-3.6,8-8s-3.6-8-8-8s-8,3.6-8,8S45.6,18,50,18z M50,22c-9,0-19,2-19,2v7h5v31h10V46h8v16h10V31h5v-7 C69,24,59,22,50,22z" fill="white" />
           </svg>
         </button>
       </div>
 
-      {/* Main Footer */}
+      {/* Main Footer - Order: Logo (Start), Copyright, Links (End) */}
       <footer className="main-footer">
         <div className="footer-content">
-          <div className="footer-links">
-            <a href="#">خريطة الموقع</a>
-            <span className="separator">|</span>
-            <a href="#">شروط الاستخدام</a>
-            <span className="separator">|</span>
-            <a href="#">اتصل بنا</a>
+          {/* Logo Section - First in Code as requested */}
+          <div className="footer-logos">
+            <img src="https://cdn.vision2030.gov.sa/media/rc0b2322/vision-2030-logo-white.png" onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '<span style="color:white;font-weight:bold;">VISION 2030</span>' }} alt="Vision 2030" className="vision-logo" />
           </div>
+
           <div className="footer-copyright">
             <p>© 2025 وزارة البلديات والإسكان</p>
           </div>
-          <div className="footer-logos">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Saudi_Vision_2030_logo.svg/800px-Saudi_Vision_2030_logo.svg.png" alt="Vision 2030" className="vision-logo" />
+
+          <div className="footer-links">
+            <a href="#">اتصل بنا</a>
+            <span className="separator">|</span>
+            <a href="#">شروط الاستخدام</a>
+            <span className="separator">|</span>
+            <a href="#">خريطة الموقع</a>
           </div>
         </div>
       </footer>

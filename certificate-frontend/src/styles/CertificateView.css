@@ -274,43 +274,51 @@
    New Main Footer Styles
    ========================================= */
 .main-footer {
-  background-color: #004d40; /* Dark Teal Green */
+  background-color: #013b3e;
+  /* Deep Dark Green/Teal from reference */
   color: #ffffff;
-  padding: 20px 0;
+  padding: 16px 0;
   width: 100%;
   margin-top: auto;
-  border-top: 4px solid #00ebc7; /* Bright Green underline */
+  border-top: 4px solid #00fecb;
+  /* Bright Turquoise/Cyan strip */
   position: relative;
   z-index: 10;
-  direction: rtl; 
+  direction: rtl;
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row; 
+  /* CRITICAL: We want Logo (Start of Code) on LEFT, and Links (End of Code) on RIGHT visually.
+     In RTL, Row flows Right to Left. 
+     Item 1 (Right) -> Item 2 (Center) -> Item 3 (Left).
+     We want: Item 1 (Logo) -> Left.
+     So we use row-reverse to flip the flow relative to RTL context.
+     RTL + Row-Reverse = Left to Right flow.
+     Item 1 (Logo) -> Left.
+     Item 2 (Copyright) -> Center.
+     Item 3 (Links) -> Right.
+  */
+  flex-direction: row-reverse;
 }
 
-/* Right (actually Left in LTR, but Right in RTL) -> Links */
-/* Center -> Copyright */
-/* Left (actually Right in LTR) -> Logo */
-
-/* Let's be explicit with flex order or just structure */
 .footer-links {
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-size: 14px;
+  gap: 16px;
+  font-size: 13px;
+  font-family: inherit;
 }
 
 .footer-links a {
   color: #ffffff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
   transition: opacity 0.2s;
 }
 
@@ -321,12 +329,13 @@
 
 .separator {
   color: #4db6ac;
+  opacity: 0.6;
 }
 
 .footer-copyright {
   text-align: center;
-  font-size: 14px;
-  color: #e0f2f1;
+  font-size: 13px;
+  color: #ffffff;
 }
 
 .footer-copyright p {
@@ -339,27 +348,30 @@
 }
 
 .vision-logo {
-  height: 45px;
+  height: 55px;
+  /* Slightly larger as per reference */
   width: auto;
-  /* Make sure it's white if needed */
-  filter: brightness(0) invert(1);
+  object-fit: contain;
 }
 
 /* Accessibility Icon Styles */
 .accessibility-icon-container {
   position: fixed;
   bottom: 25px;
-  right: 25px; /* Bottom Right */
+  right: 25px;
+  /* Bottom Right corner */
   z-index: 9999;
 }
 
 .accessibility-btn {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: #0076c8; /* Specific Blue */
-  border: 4px solid #ffffff; /* White border */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #0063cf;
+  /* Vivid Blue */
+  border: 3px solid #ffffff;
+  /* White border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -367,29 +379,33 @@
   transition: transform 0.2s ease, background-color 0.2s;
   padding: 0;
   outline: none;
+  overflow: hidden;
 }
 
 .accessibility-btn:hover {
-  transform: scale(1.1);
-  background-color: #005a9e;
+  transform: scale(1.05);
+  background-color: #0056b3;
 }
 
 .accessibility-btn svg {
-  width: 28px;
-  height: 28px;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
+    /* Stack vertically on mobile */
     gap: 15px;
     text-align: center;
   }
-  
-  .footer-links, .footer-copyright, .footer-logos {
-    justify-content: center;
+
+  /* Reset order for mobile if needed, or keep stacking */
+  .vision-logo {
+    height: 40px;
   }
-  
+
   .accessibility-icon-container {
     bottom: 15px;
     right: 15px;
