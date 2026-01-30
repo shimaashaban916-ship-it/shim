@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../components/Header";
 import "../styles/CertificateView.css";
 import { API_URL } from "../api";
+import visionLogo from "../vision2030_logo_transparent.png";
 
 const CertificateView = () => {
   const { id } = useParams();
@@ -175,19 +176,14 @@ const CertificateView = () => {
         </div>
       </div>
 
-      {/* Accessibility Icon - Fixed Position */}
+      {/* Accessibility Icon - Standard Blue Widget style */}
       <div className="accessibility-icon-container">
         <button className="accessibility-btn" aria-label="Accessibility Options">
+          {/* Standard Eye Icon often used for 'Views' or simple Person icon */}
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="12" fill="#0076c8" />
-            <path d="M12 4.5C13.1 4.5 14 3.6 14 2.5C14 1.4 13.1 0.5 12 0.5C10.9 0.5 10 1.4 10 2.5C10 3.6 10.9 4.5 12 4.5ZM12 6.5C9.5 6.5 7 7 7 7V12.5H9.5V19.5H14.5V12.5H17V7C17 7 14.5 6.5 12 6.5Z" fill="white" transform="translate(0 2) scale(0.85 0.85)" />
-            {/* Alternative Path for "Universal Access" style if above isn't exact */}
-            <path d="M12 5.5C12.8284 5.5 13.5 4.82843 13.5 4C13.5 3.17157 12.8284 2.5 12 2.5C11.1716 2.5 10.5 3.17157 10.5 4C10.5 4.82843 11.1716 5.5 12 5.5Z" fill="white" />
-            <path d="M10 8V18H10.6667V22H13.3333V18H14V8H18V6H6V8H10Z" fill="white" />
-          </svg>
-          {/* Let's use a simpler, cleaner SVG for the "Man in Circle" */}
-          <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', top: 0, left: 0, padding: '10px' }}>
-            <path d="M50,18c4.4,0,8-3.6,8-8s-3.6-8-8-8s-8,3.6-8,8S45.6,18,50,18z M50,22c-9,0-19,2-19,2v7h5v31h10V46h8v16h10V31h5v-7 C69,24,59,22,50,22z" fill="white" />
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#0063cf" />
+            <path d="M12 6C13.6569 6 15 7.34315 15 9C15 10.6569 13.6569 12 12 12C10.3431 12 9 10.6569 9 9C9 7.34315 10.3431 6 12 6Z" fill="white" />
+            <path d="M12 14C9.33333 14 7 15.3333 7 17V18H17V17C17 15.3333 14.6667 14 12 14Z" fill="white" />
           </svg>
         </button>
       </div>
@@ -195,15 +191,17 @@ const CertificateView = () => {
       {/* Main Footer - Order: Logo (Start), Copyright, Links (End) */}
       <footer className="main-footer">
         <div className="footer-content">
-          {/* Logo Section - First in Code as requested */}
+          {/* Logo Section - First in HTML = Right in RTL */}
           <div className="footer-logos">
-            <img src="https://cdn.vision2030.gov.sa/media/rc0b2322/vision-2030-logo-white.png" onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '<span style="color:white;font-weight:bold;">VISION 2030</span>' }} alt="Vision 2030" className="vision-logo" />
+            <img src={visionLogo} alt="Vision 2030" className="vision-logo" />
           </div>
 
+          {/* Copyright - Center */}
           <div className="footer-copyright">
             <p>© 2025 وزارة البلديات والإسكان</p>
           </div>
 
+          {/* Links - Last in HTML = Left in RTL */}
           <div className="footer-links">
             <a href="#">اتصل بنا</a>
             <span className="separator">|</span>

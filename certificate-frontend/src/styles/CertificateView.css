@@ -294,17 +294,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* CRITICAL: We want Logo (Start of Code) on LEFT, and Links (End of Code) on RIGHT visually.
-     In RTL, Row flows Right to Left. 
-     Item 1 (Right) -> Item 2 (Center) -> Item 3 (Left).
-     We want: Item 1 (Logo) -> Left.
-     So we use row-reverse to flip the flow relative to RTL context.
-     RTL + Row-Reverse = Left to Right flow.
-     Item 1 (Logo) -> Left.
-     Item 2 (Copyright) -> Center.
-     Item 3 (Links) -> Right.
-  */
-  flex-direction: row-reverse;
+  /* Natural RTL Flow: First Item (Logo) starts on Right */
+  flex-direction: row;
 }
 
 .footer-links {
