@@ -238,10 +238,17 @@ const Header = () => {
     return (
         <header className={`balady-header ${isScrolled ? 'scrolled' : ''}`} ref={menuRef}>
             <div className="header-content">
+                {/* Mobile Menu Button (Visible only on mobile) */}
+                <button className="mobile-menu-btn" aria-label="Menu">
+                    <span className="hamburger-line"></span>
+                    <span className="hamburger-line"></span>
+                    <span className="hamburger-line"></span>
+                </button>
+
                 <div className="header-right-group">
                     <div className="brand-logo-container">
                         <img src="/logo.svg" alt="Balady Logo" className="header-logo" />
-                        <span className="brand-name">بلدي</span>
+                        <span className="brand-name">خدمات بلدي</span>
                     </div>
 
                     <nav className="main-nav">

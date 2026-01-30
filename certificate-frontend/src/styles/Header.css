@@ -265,3 +265,98 @@
         display: none !important;
     }
 }
+
+/* Mobile Header Styles */
+.mobile-menu-btn {
+    display: none;
+    /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    /* Initial White Color */
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .balady-header {
+        height: 70px;
+        /* Reduced height for mobile */
+    }
+
+    .header-content {
+        padding: 0 20px;
+        justify-content: space-between;
+        /* Space between Hamburger and Logo */
+        flex-direction: row-reverse;
+        /* Logo Right, Hamburger Left (RTL context) */
+        /* Wait, justify-between with row-reverse:
+           Start (Right) -> Logo
+           End (Left) -> Hamburger
+           BUT HTML order is: Hamburger (First), Logo (Second).
+           So normal row in RTL: Hamburger (Right), Logo (Left).
+           User wants: Logo Right (Start), Hamburger Left (End)?
+           Actually, the images show Hamburger Left, Logo Right.
+           In RTL Document:
+           Normal flow: First item (Hamburger) starts at Right.
+           So to put Hamburger on Left, we need space-between.
+           But which one is first?
+           HTML: Hamburger, Then Logo Group.
+           RTL: Hamburger is Right. Logo is Left.
+           User wants Hamburger Left? Images show Hamburger Left.
+           So in RTL, we need Hamburger on the Left (End).
+           Logo on the Right (Start).
+           If HTML is: [Hamburger] [LogoGroup]
+           RTL Flex: [Hamburger (Right)] ... [LogoGroup (Left)]
+           We want: [Logo (Right)] ... [Hamburger (Left)]
+           So we need to swap visual order or use row-reverse?
+           HTML: [Hamburger] [LogoGroup]
+           Row-reverse RTL: [LogoGroup (Start/Right)] ... [Hamburger (End/Left)] -> YES.
+        */
+        display: flex;
+    }
+
+    .main-nav,
+    .header-left-group {
+        display: none;
+        /* Hide Desktop Nav and Icons */
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        /* Show Hamburger */
+    }
+
+    .header-right-group {
+        gap: 0;
+    }
+
+    .brand-logo-container {
+        gap: 10px;
+    }
+
+    .header-logo {
+        height: 40px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+        display: block !important;
+        /* Ensure text is visible */
+    }
+
+    /* Scrolled State for Mobile */
+    .balady-header.scrolled .hamburger-line {
+        background-color: #046f6d;
+        /* Green/Teal on Scroll */
+    }
+}
