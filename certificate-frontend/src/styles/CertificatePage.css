@@ -400,6 +400,8 @@
 .cert-footer-text-logo {
   height: 45px;
   object-fit: contain;
+  mix-blend-mode: screen;
+  /* Removes black background */
 }
 
 .cert-footer-title {
@@ -453,6 +455,7 @@
   line-height: 1.6;
   font-family: "Cairo", sans-serif;
   color: white;
+  text-align: right;
 }
 
 
