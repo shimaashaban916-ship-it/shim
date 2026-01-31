@@ -235,32 +235,35 @@
   .certificate-view-container {
     min-height: 100vh;
     padding: 80px 0 0 0;
-    /* Top padding for header only, no side/bottom padding */
-    background: #ffffff;
-    /* Match card background for seamless look */
+    /* Top padding for header only */
+    background: #013b3e;
+    /* Footer Color - shows behind bottom corners */
     align-items: stretch;
     margin-top: 0;
   }
 
   /* Adjust Green Background Layer for Mobile */
   .certificate-view-container::before {
-    height: 80px;
-    /* Header background height */
+    height: 120px;
+    /* Extended height (80px + 40px overlap) to show behind top corners */
     background: linear-gradient(to left, #001a1a 0%, #046f6d 50%, #046f6d 100%);
   }
 
   .certificate-view-card {
     width: 100%;
-    min-height: 100vh;
-    /* Ensure it fills screen if content is short */
+    min-height: calc(100vh - 80px);
+    /* Fill remaining height */
     max-width: 100%;
-    border-radius: 0;
-    /* Squared corners */
+    border-radius: 30px;
+    /* Large "Hooves" Corners */
     padding: 24px 16px;
     box-shadow: none;
     border: none;
     margin-bottom: 0;
     background: white;
+    z-index: 2;
+    /* Ensure on top of backgrounds */
+    position: relative;
   }
 
   .certificate-view-top {
