@@ -240,10 +240,17 @@
     /* Reduced from 100px to bring card closer to header */
     padding-bottom: 25px;
     /* Space above footer */
-    background: transparent;
-    /* Allow body background (likely gradient/gray) to show */
+    background: #f4f6f8;
+    /* Neutral background for the page body */
     align-items: stretch;
     margin-top: 0;
+  }
+
+  /* Adjust Green Background Layer for Mobile */
+  .certificate-view-container::before {
+    height: 80px;
+    /* Match the padding-top so background ends exactly where card starts */
+    background: linear-gradient(to left, #001a1a 0%, #046f6d 50%, #046f6d 100%);
   }
 
   .certificate-view-card {
