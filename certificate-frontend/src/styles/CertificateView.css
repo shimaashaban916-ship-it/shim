@@ -236,8 +236,8 @@
     min-height: 100vh;
     padding: 0 16px;
     /* Add side padding */
-    padding-top: 100px;
-    /* Space for header */
+    padding-top: 80px;
+    /* Reduced from 100px to bring card closer to header */
     padding-bottom: 25px;
     /* Space above footer */
     background: transparent;
