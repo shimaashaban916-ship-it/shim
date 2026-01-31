@@ -234,22 +234,33 @@
 @media (max-width: 768px) {
   .certificate-view-container {
     min-height: 100vh;
-    padding: 0;
+    padding: 0 16px;
+    /* Add side padding */
     padding-top: 100px;
-    /* Use padding to allow background to show behind header */
-    background: #ffffff;
+    /* Space for header */
+    padding-bottom: 25px;
+    /* Space above footer */
+    background: transparent;
+    /* Allow body background (likely gradient/gray) to show */
     align-items: stretch;
     margin-top: 0;
   }
 
   .certificate-view-card {
-    width: 100vw;
-    min-height: 100vh;
-    max-width: 100vw;
-    border-radius: 0;
-    padding: 16px;
-    box-shadow: none;
+    width: 100%;
+    min-height: auto;
+    /* Let content dictate height */
+    max-width: 100%;
+    border-radius: 12px;
+    /* "Simple edges" - rounded corners */
+    padding: 24px 16px;
+    /* Comfortable padding */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* Soft shadow to lift it */
     border: none;
+    margin-bottom: 20px;
+    /* visual gap above footer */
+    background: white;
   }
 
   .certificate-view-top {
