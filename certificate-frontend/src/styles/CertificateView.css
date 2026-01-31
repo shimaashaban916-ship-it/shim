@@ -146,21 +146,21 @@
   /* Match background or very subtle */
   background: #f2f2f2;
   /* Requested color */
-  border-radius: 8px;
-  padding: 12px 16px;
-  /* Increased padding for "length/width" feel */
-  font-size: 14px;
-  /* Slightly larger text */
+  border-radius: 4px;
+  /* Reduced radius for smaller height? Or keep 8px? 4px looks closer to 36px scale */
+  padding: 0 12px;
+  /* Remove vertical padding, rely on flex centering */
+  font-size: 13px;
+  /* Slightly smaller to fit 36px */
   color: #555555;
   font-weight: 400;
   font-family: 'Noto Kufi Arabic', sans-serif;
   box-shadow: none;
-  /* Remove shadow for flat look */
   cursor: pointer;
   transition: all 0.2s ease;
-  height: auto;
-  min-height: 48px;
-  /* Ensure consistent height */
+  height: 36px;
+  /* Exact height requested */
+  min-height: 36px;
   display: flex;
   align-items: center;
 }
