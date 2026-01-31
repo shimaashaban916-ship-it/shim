@@ -199,49 +199,37 @@
 .cert-info-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 8px 12px;
-  /* Add spacing between rows and columns */
   direction: rtl;
-  margin-top: 8px;
-  /* Space from name */
 }
 
 .info-row {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0px 6px;
-  /* Slightly more side padding */
+  padding: 0px 5px;
   text-align: right;
-  margin: 0px 0px 4px 0px;
-  /* Add bottom margin for spacing */
+  margin: 0px 0px 0px 0px;
 }
 
 .info-row span {
   font-weight: 700;
-  font-size: 13px;
-  /* Slightly larger for better readability */
+  font-size: 12px;
   color: #1a1a1a;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 4px;
-  /* More space from field */
+  margin-bottom: 2px;
   display: block;
   font-family: "Cairo", sans-serif;
 }
 
 .info-row p {
-  font-size: 14px;
-  /* Slightly larger text */
+  font-size: 13px;
   font-weight: 500;
   color: #707070;
   background: #fdfdfd;
-  padding: 6px 10px;
-  /* Better internal spacing */
-  min-height: 32px;
-  /* Slightly taller fields */
-  margin-top: 4px;
-  /* More space from label */
+  padding: 4px 8px;
+  min-height: 28px;
+  margin-top: 2px;
   font-family: "Cairo", sans-serif;
   display: flex;
   align-items: center;
