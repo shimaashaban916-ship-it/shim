@@ -234,14 +234,10 @@
 @media (max-width: 768px) {
   .certificate-view-container {
     min-height: 100vh;
-    padding: 0 16px;
-    /* Add side padding */
-    padding-top: 80px;
-    /* Reduced from 100px to bring card closer to header */
-    padding-bottom: 25px;
-    /* Space above footer */
-    background: #f4f6f8;
-    /* Neutral background for the page body */
+    padding: 80px 0 0 0;
+    /* Top padding for header only, no side/bottom padding */
+    background: #ffffff;
+    /* Match card background for seamless look */
     align-items: stretch;
     margin-top: 0;
   }
@@ -249,24 +245,21 @@
   /* Adjust Green Background Layer for Mobile */
   .certificate-view-container::before {
     height: 80px;
-    /* Match the padding-top so background ends exactly where card starts */
+    /* Header background height */
     background: linear-gradient(to left, #001a1a 0%, #046f6d 50%, #046f6d 100%);
   }
 
   .certificate-view-card {
     width: 100%;
-    min-height: auto;
-    /* Let content dictate height */
+    min-height: 100vh;
+    /* Ensure it fills screen if content is short */
     max-width: 100%;
-    border-radius: 12px;
-    /* "Simple edges" - rounded corners */
+    border-radius: 0;
+    /* Squared corners */
     padding: 24px 16px;
-    /* Comfortable padding */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    /* Soft shadow to lift it */
+    box-shadow: none;
     border: none;
-    margin-bottom: 20px;
-    /* visual gap above footer */
+    margin-bottom: 0;
     background: white;
   }
 
