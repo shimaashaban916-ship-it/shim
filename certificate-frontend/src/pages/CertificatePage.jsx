@@ -92,8 +92,8 @@ const CertificatePage = () => {
 
     if (!qrInstanceRef.current) {
       qrInstanceRef.current = new QRCodeStyling({
-        width: 150,
-        height: 150,
+        width: 140,
+        height: 140,
         type: "svg",
         data: dataUrl,
         dotsOptions: { type: "square", color: "#040404ff" },
