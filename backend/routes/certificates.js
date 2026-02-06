@@ -93,14 +93,7 @@ router.post('/certificates', authMiddleware, upload.single('photo'), async (req,
 });
 
 
-// dashboard list
-router.get('/certificates', authMiddleware, async (req, res) => {
-  const list = await Certificate.find().sort({ createdAt: -1 }).limit(500);
-  res.json(list);
-});
-
-
-// public get by uuid or id
+// public get by uuid or id (MUST come before /certificates to avoid route matching issues)
 router.get('/certificates/:id', async (req, res) => {
   const id = req.params.id;
   let doc = await Certificate.findOne({ uuid: id });
@@ -114,6 +107,13 @@ router.get('/certificates/:id', async (req, res) => {
   }
   res.json(doc);
 });
+
+// dashboard list
+router.get('/certificates', authMiddleware, async (req, res) => {
+  const list = await Certificate.find().sort({ createdAt: -1 }).limit(500);
+  res.json(list);
+});
+
 
 // update certificate
 router.put('/certificates/:id', authMiddleware, upload.single('photo'), async (req, res) => {

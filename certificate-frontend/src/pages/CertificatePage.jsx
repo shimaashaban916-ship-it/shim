@@ -41,7 +41,12 @@ const CertificatePage = () => {
         );
         setCertificate(res.data);
       } catch (err) {
-        console.log(err);
+        console.error("Error fetching certificate:", err);
+        if (err.response?.status === 401) {
+          alert("خطأ في المصادقة - الرجاء تسجيل الدخول مرة أخرى");
+        } else if (err.response?.status === 404) {
+          alert("الشهادة غير موجودة");
+        }
       }
     };
     fetchData();
