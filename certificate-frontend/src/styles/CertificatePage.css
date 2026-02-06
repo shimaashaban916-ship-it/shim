@@ -174,7 +174,7 @@
 .cert-qr-box canvas,
 .cert-qr-box svg {
   width: 100%;
-  height: 152px;
+  height: 130px;
   object-fit: contain;
 }
 
